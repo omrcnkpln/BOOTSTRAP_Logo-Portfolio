@@ -82,8 +82,6 @@ $(document).ready(function () {
 
             var iframeId = currentVideoId.split("-");
 
-            sliderOwlImg.trigger('stop.owl.autoplay');
-
             if (iframeId[0] == "iframe") {
                 players[iframeId[1]].playVideo();
 
