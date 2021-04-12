@@ -29,6 +29,8 @@ function onPlayerReady(event) {
 }
 
 var sliderOwlImg = $('.a-slider-carousel-img');
+var video = $("video");
+video.trigger("pause");
 
 $(document).ready(function () {
     // _____________________________ slider-owl video start - stop _____________________________________________________________
@@ -41,8 +43,8 @@ $(document).ready(function () {
     var sliderOwlItemCount = $(".a-slider-carousel-img").find(".item").length;
     var prevVideo = $("video");
     var activeOwlItem, activeCardItem;
-    
-    
+
+
     sliderOwlImg.on('translated.owl.carousel', function () {
         prevVideo.trigger('pause');
 
@@ -50,14 +52,21 @@ $(document).ready(function () {
             players[i].pauseVideo();
         }
 
-        activeOwlItem = sliderOwlImg.find(".owl-item"); 
+        activeOwlItem = sliderOwlImg.find(".owl-item");
         activeCardItem = activeOwlItem.siblings(".active").find(".a-slider-image");
-        
+
         if (activeCardItem.hasClass("has-video")) {
+            sliderOwlImg.trigger('stop.owl.autoplay');
+
+
             currentVideoByClass = activeCardItem.find(".slider-video");
             currentVideoId = currentVideoByClass.attr("id");
-            
-            var currentVideoById = $(currentVideoId);
+
+            // id yi doğru alıyorum ama işlem yapamıyoruz
+            // currentVideoById = $(currentVideoId);
+            // alert(currentVideoId);
+            // currentVideoById.attr("muted", "false");
+            // currentVideoById.css("display", "none");
 
             var iframeId = currentVideoId.split("-");
 
@@ -73,20 +82,13 @@ $(document).ready(function () {
                     }
                 });
             } else {
-                setTimeout(() => {
-                    
-                    currentVideoByClass.trigger('play');
-                }, 100);
-                // currentVideoByClass.trigger('play');
+                currentVideoByClass.trigger('play');
+
+                currentVideoByClass.on('ended', function () {
+                    sliderOwlImg.trigger('play.owl.autoplay');
+                });
             }
-
-            currentVideoByClass.on('ended', function () {
-                sliderOwlImg.trigger('play.owl.autoplay');
-            });
-
             prevVideo = currentVideoByClass;
-        } else {
-            sliderOwlImg.trigger('play.owl.autoplay');
         }
     });
 
@@ -164,6 +166,7 @@ $(document).ready(function () {
     anasayfaSlider.find('.owl-dot').click(function () {
         $(this).addClass("active").siblings().removeClass("active");
         sliderOwlImg.trigger('to.owl.carousel', [$(this).index(), 666]);
+
         sliderOwlImg.trigger('stop.owl.autoplay');
         sliderOwlImg.trigger('play.owl.autoplay');
     });
@@ -172,11 +175,16 @@ $(document).ready(function () {
         sliderOwl.trigger('next.owl.carousel', [666]);
         sliderOwlImg.trigger('next.owl.carousel', [666]);
 
+        sliderOwlImg.trigger('stop.owl.autoplay');
+        sliderOwlImg.trigger('play.owl.autoplay');
     });
 
     sliderOwlPrevBtn.click(function () {
         sliderOwl.trigger('prev.owl.carousel', [666]);
         sliderOwlImg.trigger('prev.owl.carousel', [666]);
+
+        sliderOwlImg.trigger('stop.owl.autoplay');
+        sliderOwlImg.trigger('play.owl.autoplay');
     });
 
 
