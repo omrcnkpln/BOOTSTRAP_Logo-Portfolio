@@ -30,9 +30,16 @@ function onPlayerReady(event) {
 
 var sliderOwlImg = $('.a-slider-carousel-img');
 var video = $("video");
-// video.trigger("pause");
+// video.attr("muted", "false");
+// video.removeAttr("muted");
 
 $(document).ready(function () {
+    // touchstart touchmove keyup scroll DOMMouseScroll mousewheel 
+    $("body,html").bind("mousedown", function(e){
+        sliderOwlImg.trigger('play.owl.autoplay');
+        video.trigger("play");
+        video.trigger("pause");
+    });
     // _____________________________ slider-owl video start - stop _____________________________________________________________
 
     var anasayfaSlider = $('.anasayfa-slider');
@@ -44,9 +51,9 @@ $(document).ready(function () {
     var prevVideo = $("video");
     var activeOwlItem, activeCardItem;
 
-
     sliderOwlImg.on('translated.owl.carousel', function () {
-        prevVideo.trigger('pause');
+        // prevVideo.trigger('pause');
+        // video.trigger('pause');
 
         for (var i = 0; i < players.length; ++i) {
             players[i].pauseVideo();
@@ -88,7 +95,7 @@ $(document).ready(function () {
                     sliderOwlImg.trigger('play.owl.autoplay');
                 });
             }
-            prevVideo = currentVideoByClass;
+            // prevVideo = currentVideoByClass;
         }
     });
 
@@ -131,7 +138,7 @@ $(document).ready(function () {
         margin: 0,
         videoWidth: false,
         videoHeight: false,
-        autoplay: true,
+        // autoplay: true,
         autoplayTimeout: 3000,
         smartSpeed: 666,
         autoplayHoverPause: true,
@@ -149,7 +156,7 @@ $(document).ready(function () {
                 items: 1
             }
         }
-    });
+    });  
 
     for (let index = 0; index < sliderOwlItemCount; index++) {
         if (index == 0) {
