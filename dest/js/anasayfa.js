@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     sliderOwlImg.on('translated.owl.carousel', function () {
         // prevVideo.trigger('pause');
-        video.trigger('pause');
+        // video.trigger('pause');
 
         for (var i = 0; i < players.length; ++i) {
             players[i].pauseVideo();
