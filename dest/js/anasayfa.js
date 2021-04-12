@@ -39,16 +39,9 @@ $(document).ready(function () {
     $("body,html").bind("mousedown", function (e) {
         if (startOwl == 1) {
             sliderOwlImg.trigger('play.owl.autoplay');
-            video.trigger("play");
-            video.trigger("pause");
+            // video.trigger("play");
+            // video.trigger("pause");
 
-            for (var i = 0; i < players.length; ++i) {
-                players[i].pauseVideo();
-            }
-
-            for (var i = 0; i < players.length; ++i) {
-                players[i].pauseVideo();
-            }
             startOwl = 2;
         }
     });
