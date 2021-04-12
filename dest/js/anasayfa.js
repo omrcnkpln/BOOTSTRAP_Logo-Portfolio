@@ -30,7 +30,7 @@ function onPlayerReady(event) {
 
 var sliderOwlImg = $('.a-slider-carousel-img');
 var video = $("video");
-video.trigger("pause");
+// video.trigger("pause");
 
 $(document).ready(function () {
     // _____________________________ slider-owl video start - stop _____________________________________________________________
