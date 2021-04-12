@@ -38,7 +38,7 @@ $(document).ready(function () {
     $("body,html").bind("mousedown", function(e){
         sliderOwlImg.trigger('play.owl.autoplay');
         video.trigger("play");
-        video.trigger("pause");
+        // video.trigger("pause");
     });
     // _____________________________ slider-owl video start - stop _____________________________________________________________
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
     var activeOwlItem, activeCardItem;
 
     sliderOwlImg.on('translated.owl.carousel', function () {
-        carouselCustomDots.css("border", "2px solid pink");
+        carouselCustomDots.css("border", "2px solid lime");
         // prevVideo.trigger('pause');
         // video.trigger('pause');
         
