@@ -57,7 +57,6 @@ $(document).ready(function () {
     var activeOwlItem, activeCardItem;
 
     sliderOwlImg.on('translated.owl.carousel', function () {
-        carouselCustomDots.css("border", "2px solid pink");
         prevVideo.trigger('pause');
         // video.trigger('pause');
 
