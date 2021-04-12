@@ -52,7 +52,8 @@ $(document).ready(function () {
     var activeOwlItem, activeCardItem;
 
     sliderOwlImg.on('translated.owl.carousel', function () {
-        prevVideo.trigger('pause');
+        carouselCustomDots.css("border", "2px solid red");
+        // prevVideo.trigger('pause');
         // video.trigger('pause');
         
         for (var i = 0; i < players.length; ++i) {
@@ -63,8 +64,6 @@ $(document).ready(function () {
         activeCardItem = activeOwlItem.siblings(".active").find(".a-slider-image");
         
         if (activeCardItem.hasClass("has-video")) {
-            alert();
-            carouselCustomDots.css("border", "2px solid red");
             sliderOwlImg.trigger('stop.owl.autoplay');
 
 
