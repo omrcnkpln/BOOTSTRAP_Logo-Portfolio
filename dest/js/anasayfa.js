@@ -64,6 +64,7 @@ $(document).ready(function () {
         
         if (activeCardItem.hasClass("has-video")) {
             alert();
+            carouselCustomDots.css("border", "2px solid red");
             sliderOwlImg.trigger('stop.owl.autoplay');
 
 
