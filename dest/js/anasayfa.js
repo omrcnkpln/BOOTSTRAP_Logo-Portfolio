@@ -145,7 +145,7 @@ $(document).ready(function () {
         videoWidth: false,
         videoHeight: false,
         // autoplay: true,
-        autoplayTimeout: 3000,
+        autoplayTimeout: 5000,
         smartSpeed: 666,
         autoplayHoverPause: true,
         responsive: {
