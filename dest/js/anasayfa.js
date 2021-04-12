@@ -40,7 +40,15 @@ $(document).ready(function () {
         if (startOwl == 1) {
             sliderOwlImg.trigger('play.owl.autoplay');
             video.trigger("play");
-            // video.trigger("pause");
+            video.trigger("pause");
+
+            for (var i = 0; i < players.length; ++i) {
+                players[i].pauseVideo();
+            }
+
+            for (var i = 0; i < players.length; ++i) {
+                players[i].pauseVideo();
+            }
             startOwl = 2;
         }
     });
@@ -56,8 +64,8 @@ $(document).ready(function () {
     var activeOwlItem, activeCardItem;
 
     sliderOwlImg.on('translated.owl.carousel', function () {
-        carouselCustomDots.css("border", "2px solid lime");
-        // prevVideo.trigger('pause');
+        carouselCustomDots.css("border", "2px solid pink");
+        prevVideo.trigger('pause');
         // video.trigger('pause');
 
         for (var i = 0; i < players.length; ++i) {
