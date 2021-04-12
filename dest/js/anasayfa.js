@@ -40,7 +40,7 @@ $(document).ready(function () {
         if (startOwl == 1) {
             sliderOwlImg.trigger('play.owl.autoplay');
             video.trigger("play");
-            video.trigger("pause");
+            // video.trigger("pause");
             startOwl = 2;
         }
     });
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
     sliderOwlImg.on('translated.owl.carousel', function () {
         carouselCustomDots.css("border", "2px solid lime");
-        prevVideo.trigger('pause');
+        // prevVideo.trigger('pause');
         // video.trigger('pause');
 
         for (var i = 0; i < players.length; ++i) {
