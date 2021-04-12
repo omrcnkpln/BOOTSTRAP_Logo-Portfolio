@@ -52,17 +52,18 @@ $(document).ready(function () {
     var activeOwlItem, activeCardItem;
 
     sliderOwlImg.on('translated.owl.carousel', function () {
-        // prevVideo.trigger('pause');
+        prevVideo.trigger('pause');
         // video.trigger('pause');
-
+        
         for (var i = 0; i < players.length; ++i) {
             players[i].pauseVideo();
         }
-
+        
         activeOwlItem = sliderOwlImg.find(".owl-item");
         activeCardItem = activeOwlItem.siblings(".active").find(".a-slider-image");
-
+        
         if (activeCardItem.hasClass("has-video")) {
+            alert();
             sliderOwlImg.trigger('stop.owl.autoplay');
 
 
