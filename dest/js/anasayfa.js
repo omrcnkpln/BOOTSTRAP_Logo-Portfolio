@@ -30,15 +30,19 @@ function onPlayerReady(event) {
 
 var sliderOwlImg = $('.a-slider-carousel-img');
 var video = $("video");
+let startOwl = 1;
 // video.attr("muted", "false");
 // video.removeAttr("muted");
 
 $(document).ready(function () {
     // touchstart touchmove keyup scroll DOMMouseScroll mousewheel 
-    $("body,html").bind("mousedown", function(e){
-        sliderOwlImg.trigger('play.owl.autoplay');
-        video.trigger("play");
-        // video.trigger("pause");
+    $("body,html").bind("mousedown", function (e) {
+        if (startOwl == 1) {
+            sliderOwlImg.trigger('play.owl.autoplay');
+            video.trigger("play");
+            video.trigger("pause");
+            startOwl = 2;
+        }
     });
     // _____________________________ slider-owl video start - stop _____________________________________________________________
 
@@ -53,16 +57,16 @@ $(document).ready(function () {
 
     sliderOwlImg.on('translated.owl.carousel', function () {
         carouselCustomDots.css("border", "2px solid lime");
-        // prevVideo.trigger('pause');
+        prevVideo.trigger('pause');
         // video.trigger('pause');
-        
+
         for (var i = 0; i < players.length; ++i) {
             players[i].pauseVideo();
         }
-        
+
         activeOwlItem = sliderOwlImg.find(".owl-item");
         activeCardItem = activeOwlItem.siblings(".active").find(".a-slider-image");
-        
+
         if (activeCardItem.hasClass("has-video")) {
             sliderOwlImg.trigger('stop.owl.autoplay');
 
@@ -96,7 +100,7 @@ $(document).ready(function () {
                     sliderOwlImg.trigger('play.owl.autoplay');
                 });
             }
-            // prevVideo = currentVideoByClass;
+            prevVideo = currentVideoByClass;
         }
     });
 
@@ -157,7 +161,7 @@ $(document).ready(function () {
                 items: 1
             }
         }
-    });  
+    });
 
     for (let index = 0; index < sliderOwlItemCount; index++) {
         if (index == 0) {
