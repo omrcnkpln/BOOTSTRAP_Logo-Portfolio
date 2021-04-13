@@ -202,13 +202,12 @@
         }
     }
     .ortala {
-        z-index: 1;
+        z-index: 3;
         position: absolute;
         display: flex;
         justify-content: flex-end;
         width: 90%;
         bottom: 0px;
-        // background-color: pink;
         .alt {
             width: 100%;
             max-width: 800px;

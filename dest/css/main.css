@@ -901,7 +901,7 @@ a:hover {
       .anasayfa-slider .slider-image-side .a-s-buttons .arrow-right-mor {
         margin-bottom: 2rem; }
   .anasayfa-slider .ortala {
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     display: -webkit-flex;
     display: -moz-box;
@@ -1498,7 +1498,10 @@ a:hover {
     .anasayfa-slider .slider-image-side .a-s-buttons {
       display: none; }
   .anasayfa-slider .ortala {
-    overflow: hidden; }
+    overflow: hidden;
+    width: -webkit-calc(100% - 2rem);
+    width: -moz-calc(100% - 2rem);
+    width: calc(100% - 2rem); }
     .anasayfa-slider .ortala .alt {
       width: 100%;
       position: relative; }
@@ -1553,10 +1556,8 @@ a:hover {
       .anasayfa-slider .slider-image-side .slider-wrapper .a-slider-carousel-img .item .a-slider-image.has-video iframe {
         min-height: 130%;
         min-width: 130%; }
-      .anasayfa-slider .slider-image-side .slider-wrapper .a-slider-carousel-img .item .a-slider-image.has-video .slider-video {
-        border: 2px solid red; }
-        .anasayfa-slider .slider-image-side .slider-wrapper .a-slider-carousel-img .item .a-slider-image.has-video .slider-video.custom-video {
-          min-width: 140%; }
+      .anasayfa-slider .slider-image-side .slider-wrapper .a-slider-carousel-img .item .a-slider-image.has-video .slider-video.custom-video {
+        min-width: 140%; }
   .anasayfa-slider .ortala {
     width: -webkit-calc(100% + 2rem);
     width: -moz-calc(100% + 2rem);
@@ -1568,7 +1569,7 @@ a:hover {
     .anasayfa-slider .ortala .alt {
       width: 90%; }
       .anasayfa-slider .ortala .alt img {
-        width: 130%;
+        width: 150%;
         margin-left: -15%;
         margin-bottom: -5%; }
     .anasayfa-slider .ortala .btn-wrapper {

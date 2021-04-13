@@ -73,6 +73,7 @@
         }
         .ortala {
             overflow: hidden;
+            width: calc(100% - 2rem);
             .alt {
                 width: 100%;
                 position: relative;
@@ -178,7 +179,6 @@
                                     min-width: 130%;
                                 }
                                 .slider-video {
-                                    border: 2px solid red;
                                     &.custom-video{
                                         // min-height: 140%;
                                         min-width: 140%;
@@ -197,7 +197,7 @@
             .alt {
                 width: 90%;
                 img {
-                    width: 130%;
+                    width: 150%;
                     margin-left: -15%;
                     margin-bottom: -5%;
                 }
