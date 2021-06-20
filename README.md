@@ -12,5 +12,5 @@ Portfolio Website Has:
     
 With:
 
-XD, HTML, CSS3, CSS media query, CSS Flexbox, CSS Grid, SCSS, SASS, GRUNTJS, BOOTSTRAP, CSS ANIMATIONS, Scroll Reveal, Animate.Css
-JQUERY, JQUERY ANIMATE, JAVASCRIPT
+    XD, HTML, CSS3, CSS media query, CSS Flexbox, CSS Grid, SCSS, SASS, GRUNTJS, BOOTSTRAP, CSS ANIMATIONS, Scroll Reveal, Animate.Css
+    JQUERY, JQUERY ANIMATE, JAVASCRIPT
