@@ -1,6 +1,7 @@
 # Portfolio Example With Blog Pages
 
 Portfolio Website Has:
+
     - Blog Pages
     - Responsive
     - Scroll Reveal Animations
